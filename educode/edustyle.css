@@ -1,0 +1,233 @@
+:root {
+     --primary: #4e73df;
+     --secondary: #1cc88a;
+     --dark: #5a5c69;
+     --light: #f8f9fc;
+     --accent: #f6c23e;
+}
+
+.body{
+font-family: 'Poppins', sans-serif;
+color: var(--dark);
+background-color: var(--light);
+overflow-x: hidden;
+}
+.navbar {
+background-color: rgb(0, 191, 255);
+box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+height: 75px;
+}
+   
+.navbar-brand {
+font-weight: 700;
+color: var(--primary);
+font-size: 1.8rem;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+
+
+}
+.full-screen-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+#wellcome{
+background: linear-gradient(135deg, #667eea 0%, #00a6ff 100%);
+}
+#hey{
+color: rgb(255, 157, 0);
+}
+#fname,#lname{
+     color: #ffffff;
+}
+.Craft{
+     color: black;
+}
+.bro{
+     color: rgb(255, 255, 255);
+}
+#eduab{
+     color: #ff8000;
+}
+#abouts{
+     background: linear-gradient(135deg, #009dff 0%, #004074 100%);
+}
+#abouts p {
+    color: #f8f9fc;
+}
+
+#vis {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 1rem;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+}
+#vis i {
+  align-self: center;
+  color: green;
+}
+#vis h5 {
+  margin-bottom: 0.25rem;
+}
+#vis p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+#ves{
+     color: #ff8000;
+}
+
+#what {
+    width: 100%;
+    height: initial;
+    background-image: url("photos/what\'sbr.jpg");
+    background-size: cover;       
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+#what p {
+     color: rgb(0, 0, 0);
+}
+#what-hed {
+     color: #000000;
+text-shadow: 1px 1px 10px rgb(255, 255, 255);
+
+}
+.feature-icon{
+     width: 70px;
+     height: 70px;
+     background:white;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+     font-size: 1.8rem;
+     color: rgb(0, 187, 255);
+}
+.card:hover .feature-icon{
+     background:  rgb(0, 187, 255);
+     color:white;
+}
+.card:hover {
+transform: scale(1.03);
+cursor: pointer;
+transition: transform 1s ease, box-shadow 0.3s 
+ease;
+box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+
+
+.social-icon {
+ width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: white;
+    transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+
+#boody{
+background-color: #00d5ff;
+height: 800px;
+}
+
+select{
+     width: 100%;
+     padding: 12px;
+     margin-top: 5px;
+     border-radius: 7px;
+     border: 1px solid #5d5d5d;
+
+}
+label{
+     display: block;
+     margin-top: 15px;
+     font-weight: bold;
+}
+#submitBtn {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#submitBtn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+#full-form{
+    display: flex;
+    justify-content: center;
+    
+}
+#ccc{
+     width: 40%;
+}
+#jjj{
+   position: relative;
+   justify-self: center;
+   align-self: center
+}
+
+#quote{
+     margin-top: 15px;
+     font-size: 30px;
+     color: #000000;
+     font-style: italic;
+}
+
+
+ body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f2f2f2;
+    }
+    .navbar.dark-mode, footer.dark-mode {
+      background-color: #262626 !important;
+      color: #f2f2f2;
+    }
+    .navbar-dark .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .card, .form-control, textarea {
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode .form-control, .dark-mode textarea {
+      background-color: #2b2b2b;
+      color: #f2f2f2;
+      border: 1px solid #444;
+    }
+    .dark-mode .form-control::placeholder, .dark-mode textarea::placeholder {
+      color: #aaa;
+    }
+    .dark-mode h2, .dark-mode h4 {
+      color: #f8f8f8;
+    }
+    .dark-mode .card {
+      background-color: #2c3b35;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 149, 45, 0.2);
+    }
+    .dark-mode #about { background-color: #1f2d27 !important; }
+    .dark-mode #services { background-color: #22332e !important; }
+    .dark-mode #styles { background-color: #1d2f26 !important; }
+    .dark-mode #contact { background-color: #2b2620 !important; }

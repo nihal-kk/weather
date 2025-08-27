@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function speak(text) {
+    const text_speak = new SpeechSynthesisUtterance(text);
+
+    text_speak.rate = 1;
+    text_speak.volume = 1;
+    text_speak.pitch = 1;
+
+    window.speechSynthesis.speak(text_speak);
+    speak("hello hashida")
+}
+window.addEventListener('load', () => {
+    speak("hello sir");
+});
+    </script>
+</body>
+</html>

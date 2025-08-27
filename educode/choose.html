@@ -1,0 +1,174 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="EduCode - Next-generation learning platform for coding and technology. Structured roadmaps, hands-on projects, and career preparation.">
+        <meta name="keywords"
+            content="coding, programming, web development, learn to code, tech education, coding bootcamp, programming courses">
+        <meta name="author" content="EduCode">
+        <title>EduCode- Onboarding</title>
+        <!-- ICON -->
+        <link rel="icon" type="x-icon/png" href="photos/lolololgo.png">
+        <!-- css file -->
+        <link rel="stylesheet" href="edustyle.css">
+        <!-- Bootstrap CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+        <!-- boot icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <!-- AOS CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    </head>
+    <body id="boody">
+        
+                    <img class="img-fluid" src="photos/educodeh.png" alt="" style="border-radius: 10px; width: 250px; height: 100px; position: relative; top: 50px; left: 50px;">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="height: 100px;"></div>
+                <div class="col-md-4" style="display: flex; align-content: center;">
+                    <!-- <img class="img-fluid w-100" src="photos/nwe.png" alt="" style="border-radius: 10px;"> -->
+                </div>
+                <div class="col-md-4">
+                    <div class="card" id="jjj">
+                        <div class="card-body">
+                            <h5>Hey, <span id="ulname" style="color: rgb(0, 98, 255);font-weight: bold;"></span></h5>
+                            <h4 style="color: rgb(48, 0, 94);  text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;"> Thanks for starting your journey with <span style="color: rgb(0, 110, 255)">EduCode!</span></h4>
+                            <form id="choose-form" onsubmit="return checkDomain()">
+                                <!-- domain -->
+                                <label for="domain" id="label">Choose Your Domain</label>
+                                <select name="domain" id="domain" required>
+                                    <option value="">    Select Your Domain     </option>
+                                    <option value="MERN Stack (Full Stack JavaScript + React)">MERN Stack (Full Stack JavaScript + React)</option>
+                                    <option value="MEAN Stack (Full Stack JavaScript + Angular)">MEAN Stack (Full Stack JavaScript + Angular)</option>
+                                    <option value="Python Full Stack (Python + Django)">Python Full Stack (Python + Django)</option>
+                                    <option value="Flutter Full Stack ( app development)">Flutter Full Stack ( app development)</option>
+                                    <option value=".NET Development">.NET Development</option>
+                                    <option value="Golang Development">Golang Development</option>
+                                    <option value="frontend dovelopment (React)">frontend dovelopment (React)</option>
+                                    <option value="frontend dovelopment (Angular)">frontend dovelopment (Angular)</option>
+                                </select>
+                                
+                                <!-- Choose Duration -->
+                                <label for="duration">Choose Duration</label>
+                                <select id="duration" name="duration" required>
+                                    <option value=""> Select Duration </option>
+                                    <option value="5 Months">5 Months</option>
+                                    <option value="6 Months">6 Months</option>
+                                    <option value="7 Months">7 Months</option> 
+                                    <option value="12 Months">12 Months</option> 
+                                </select>
+                                <!-- Terms Checkbox -->
+                            
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">
+                                    I Agree Educode's Terms Before Submit
+                                    </label>
+                            
+                                <br><button type="submit" id="submitBtn" onclick="a()">Start Learning</button>
+                                    
+                            </form>
+                                <br><p id="Future" style="text-align: center;">"Craft Your Code , Shape Your Future"</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+                 <br><p style="text-align: center;" id="quote">"Every Expert Was Ones A Beginner."</p>
+        
+        <script>
+            function checkDomain(){
+                const selecteDomain =document.getElementById("domain").value;
+                const selecteDuration =document.getElementById("duration").value;
+                
+                if(selecteDomain === "MERN Stack (Full Stack JavaScript + React)"){
+                  if(selecteDuration === "5 Months"){
+                    window.location.href ="mern5.html";
+
+                  }else if(selecteDuration === "6 Months"){
+                    window.location.href ="mern6.html";
+
+                  }else if(selecteDuration === "7 Months"){
+                    window.location.href ="mern7.html";
+
+                  }else if(selecteDuration === "12 Months"){
+                    window.location.href ="mern12.html";
+                  }else{
+                    window.location.href ="zoz.html";
+                  }
+                }else if(selecteDomain === "MEAN Stack (Full Stack JavaScript + Angular)"){
+                  if(selecteDuration === "5 Months"){
+                    window.location.href ="mean5.html";
+
+                  }else if(selecteDuration === "6 Months"){
+                    window.location.href ="mean6.html";
+
+                  }else if(selecteDuration === "7 Months"){
+                    window.location.href ="mean7.html";
+
+                  }else if(selecteDuration === "12 Months"){
+                    window.location.href ="mean12.html";
+                  }else{
+                    window.location.href ="zoz.html";
+                  }
+                }else if(selecteDomain === "Python Full Stack (Python + Django)"){
+                  if(selecteDuration === "5 Months"){
+                    window.location.href ="python5.html";
+
+                  }else if(selecteDuration === "6 Months"){
+                    window.location.href ="python6.html";
+
+                  }else if(selecteDuration === "7 Months"){
+                    window.location.href ="python7.html";
+
+                  }else if(selecteDuration === "12 Months"){
+                    window.location.href ="python12.html";
+                }else{
+                    alert("please try again")
+                    window.location.href ="zoz.html";
+                }
+                }else{
+                    window.location.href ="zoz.html";
+                  
+                }
+                  return false;
+
+            }
+            
+            function a(){
+            let set =document.getElementById('domain').value;
+            let Duration =document.getElementById("duration").value;
+            const d = new Date();
+
+
+            
+             localStorage.setItem('domain', set);
+             localStorage.setItem('duration', Duration);
+             localStorage.setItem('date',d);
+
+            }
+        </script>
+
+    <!-- 🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌🙌 -->
+            <!-- Bootstrap JS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- javascript file -->
+         <!-- <script src="ligin.js"></script> -->
+        <script>
+            const ffname = localStorage.getItem("username");
+            if (ffname) {
+                document.getElementById("ulname").innerText = `${ffname}`;
+            }
+
+        </script>
+    </body>
+    </html>

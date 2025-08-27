@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hover to Play Video (HTML & CSS Only)</title>
+  <style>
+    :root {
+      --w: 360px; /* change width as you like */
+      --radius: 16px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display: grid;
+      place-content: center;
+      min-height: 100vh;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+    }
+
+    .hover-card {
+      width: min(90vw, var(--w));
+      aspect-ratio: 16/9; /* keeps it responsive */
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    /* Base media layers */
+    .hover-card img,
+    .hover-card video { 
+      position: absolute; 
+      inset: 0; 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block; 
+    }
+
+    /* Show image by default */
+    .hover-card img { 
+      transition: opacity .35s ease; 
+      opacity: 1; 
+    }
+
+    /* Hide video by default (but it will be autoplaying muted in the background) */
+    .hover-card video { 
+      transition: opacity .35s ease, transform .35s ease; 
+      opacity: 0; 
+      transform: scale(1.02); /* subtle zoom when revealed */
+      pointer-events: none; /* so the hover stays on the parent */
+    }
+
+    /* On hover, reveal video and fade out the image */
+    .hover-card:hover video, 
+    .hover-card:focus-visible video { 
+      opacity: 1; 
+      transform: scale(1);
+    }
+    .hover-card:hover img, 
+    .hover-card:focus-visible img { 
+      opacity: 0; 
+    }
+
+    /* Optional label */
+    .label {
+      position: absolute;
+      right: .6rem;
+      bottom: .6rem;
+      background: rgba(15, 23, 42, .6);
+      backdrop-filter: blur(6px);
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-size: .75rem;
+      line-height: 1;
+      border: 1px solid rgba(255,255,255,.12);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Accessibility: respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hover-card img,
+      .hover-card video { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="hover-card" href="#" aria-label="Preview video (hover to play)">
+    <!-- Image shown by default -->
+    <img src="https://images.unsplash.com/photo-1485841890310-6a055c88698a?w=1200&q=80&auto=format&fit=crop" alt="Preview thumbnail" />
+
+    <!-- Video sits underneath and autoplays muted. It becomes visible on hover via CSS. -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="https://images.unsplash.com/photo-1485841890310-6a055c88698a?w=1200&q=80&auto=format&fit=crop"
+    >
+      <!-- Replace with your own video sources -->
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      Your browser does not support the HTML5 video tag.
+    </video>
+
+    <span class="label">Hover to play</span>
+  </a>
+
+</body>
+</html>

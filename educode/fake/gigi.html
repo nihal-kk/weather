@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduCode - Next-generation learning platform for coding and technology. Structured roadmaps, hands-on projects, and career preparation.">
+    <meta name="keywords" content="coding, programming, web development, learn to code, tech education, coding bootcamp, programming courses">
+    <meta name="author" content="EduCode">
+    <title>EduCode - Craft Your Code. Shape Your Future.</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #1cc88a;
+            --dark: #5a5c69;
+            --light: #f8f9fc;
+            --accent: #f6c23e;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.1)" points="0,100 100,0 100,100"/></svg>');
+            background-size: 100% 100%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 600px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .feature-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .domain-card {
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .domain-card:hover {
+            border-left: 5px solid var(--secondary);
+            background-color: rgba(78, 115, 223, 0.05);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a5ccc;
+            border-color: #3a5ccc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.4);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.4);
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            background-color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #f8f9fc;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .badge-custom {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 15px;
+            width: 2px;
+            height: calc(100% + 15px);
+            background: var(--primary);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 50px;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EduCode</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resources</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">ncoihal
+                <div class="class">
+                    div.class <div class="nihal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h1 class="display-4 fw-bold mb-4">About EduCode</h1>
+                    <p class="lead mb-4">A next-generation learning platform built to reshape the way you learn coding and technology.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-light btn-lg">Our Mission</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">Our Team</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block fade-in">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Learning Platform" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 fade-in">
+                    <h2 class="section-title">Our Vision</h2>
+                    <p class="lead mb-4">At EduCode, we believe structure beats chaos. We're on a mission to eliminate confusion in tech learning by giving you:</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            <div>
+                                <h5 class="mb-1">A daily breakdown of what to learn</h5>
+                                <p class="text-muted mb-0">No more guessing what to focus on each day</p>
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            <div>
+                                <h5 class="mb-1">A path that's goal-focused and job-ready</h5>
+                                <p class="text-muted mb-0">Learn skills that employers actually want</p>
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Zero fluff. Only practical skills</h5>
+                                <p class="text-muted mb-0">We focus on what matters for your career</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Community, accountability, and a certificate at the finish line</h5>
+                                <p class="text-muted mb-0">Learning is faster when done together</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <img src="/photos/lolololgo.png" alt="Learning Journey" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">What Makes EduCode Different?</h2>
+                <p class="lead">We've reimagined tech education with a focus on structure, practicality, and results</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h4>Daily Learning Roadmaps</h4>
+                            <p class="text-muted">No more guessing what to learn. Follow our structured paths day by day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h4>Weekly Mini Projects</h4>
+                            <p class="text-muted">Build something every week to reinforce your learning and build confidence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Monthly Real Projects</h4>
+                            <p class="text-muted">Apply everything you've learned in comprehensive, real-world applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Interview Questions</h4>
+                            <p class="text-muted">Domain-specific technical & HR prep to help you land your dream job.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Domains -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Course Domains on EduCode</h2>
+                <p class="lead">We support the most in-demand stacks in 2025 and beyond</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 fade-in">
+                    <div class="card domain-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3"><i class="fab fa-js-square text-primary me-2"></i> MERN Stack (Full Stack JavaScript)</h4>
+                            <p class="mb-3">MongoDB, Express, React, Node.js</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2">REST APIs</span>
+                                <span class="badge bg-light text-dark me-2">CRUD</span>
+                                <span class="badge bg-light text-dark me-2">Auth</span>
+                                <span class="badge bg-light text-dark">JWT</span>
+                            </div>
+                            <p class="text-muted">Build real-world full-stack web applications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="card domain-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3"><i class="fab fa-python text-primary me-2"></i> Python + Django</h4>
+                            <p class="mb-3">Python core + OOP + Django framework</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2">Backend development</span>
+                                <span class="badge bg-light text-dark me-2">REST APIs</span>
+                                <span class="badge bg-light text-dark">Admin panel</span>
+                            </div>
+                            <p class="text-muted">Build scalable web applications with Python's most popular framework</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="card domain-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3"><i class="fab fa-mobile-alt text-primary me-2"></i> Flutter + Dart</h4>
+                            <p class="mb-3">Build Android & iOS apps with a single codebase</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2">Responsive UI</span>
+                                <span class="badge bg-light text-dark me-2">State Management</span>
+                                <span class="badge bg-light text-dark">Firebase</span>
+                            </div>
+                            <p class="text-muted">Projects: Chat App, Notes App, Ecommerce Mobile App</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="card domain-card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3"><i class="fab fa-html5 text-primary me-2"></i> Frontend Development</h4>
+                            <p class="mb-3">HTML5, CSS3, JavaScript, Bootstrap</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2">Responsive design</span>
+                                <span class="badge bg-light text-dark me-2">Layout</span>
+                                <span class="badge bg-light text-dark">Animation</span>
+                            </div>
+                            <p class="text-muted">Projects: Portfolio, Dashboard, Blog, Calculator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Structured Learning Paths</h2>
+                <p class="lead">Choose the path that fits your goals and timeline</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 text-primary mb-3">🗓</div>
+                            <h4>5 Months</h4>
+                            <p class="badge-custom mb-3">Fast-track</p>
+                            <p>Intense learning pace for those who want to accelerate their career</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 text-primary mb-3">🗓</div>
+                            <h4>6 Months</h4>
+                            <p class="badge-custom mb-3">Balanced</p>
+                            <p>Regular pace with weekly projects to reinforce learning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 text-primary mb-3">🗓</div>
+                            <h4>7 Months</h4>
+                            <p class="badge-custom mb-3">Extended</p>
+                            <p>Suitable for complete beginners with extended support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 text-primary mb-3">🗓</div>
+                            <h4>1 Year</h4>
+                            <p class="badge-custom mb-3">Deep Dive</p>
+                            <p>Comprehensive learning with full real-world project portfolio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Flow -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Learning Flow</h2>
+                <p class="lead">Here's how every course is structured for maximum effectiveness</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 fade-in">
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="display-4 text-primary">🗓</div>
+                                <h4>Daily Lessons</h4>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Clear goals for each day</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Topic explanations + code practice</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Quiz, exercises, and MCQs</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="display-4 text-primary">🧩</div>
+                                <h4>Weekly Mini Projects</h4>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Calculator</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Weather App</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Blog Template</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Portfolio UI</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>API Fetch App</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="display-4 text-primary">🚀</div>
+                                <h4>Monthly Real Projects</h4>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>LMS Platform</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Ecommerce Site</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Real-Time Chat App</div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Food Delivery UI</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                    <div>Admin Dashboard</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6 fade-in">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="display-4 text-primary">🎯</div>
+                                <h4>Interview Questions</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3 d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Technical rounds (DSA, Stack-specific)</div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>HR questions</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3 d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Project explanations</div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Resume help & GitHub setup</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="display-4 text-primary">🏅</div>
+                                <h4>Final Certificate</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3 d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>EduCode Verified Certificate</div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Share on LinkedIn</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3 d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Add to your resume</div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                            <div>Embed in your portfolio</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <p class="mb-2">Badge Tiers:</p>
+                                <div>
+                                    <span class="badge bg-secondary me-2">Bronze</span>
+                                    <span class="badge bg-info me-2">Silver</span>
+                                    <span class="badge bg-warning">Gold</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Support -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Community & Support</h2>
+                <p class="lead">You're never alone on EduCode</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5>Peer Support Forums</h5>
+                            <p class="text-muted">Connect with fellow learners to solve problems and share knowledge</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <h5>Code Buddy System</h5>
+                            <p class="text-muted">Pair up with a learning partner for accountability and motivation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h5>Doubt Discussion Rooms</h5>
+                            <p class="text-muted">Get real-time help from mentors and teaching assistants</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h5>Weekly Live Mentoring</h5>
+                            <p class="text-muted">Live Q&A sessions with industry experts (Coming soon)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Join -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Who Should Join EduCode?</h2>
+                <p class="lead">Our platform is designed for learners at every stage</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h5>Students & College Learners</h5>
+                            <p class="text-muted">Build job-ready skills alongside your degree</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h5>Career Switchers</h5>
+                            <p class="text-muted">Transition to tech with a structured, proven path</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h5>Absolute Beginners</h5>
+                            <p class="text-muted">Start from scratch with our supportive learning environment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h5>Freelancers & Aspiring Developers</h5>
+                            <p class="text-muted">Build a portfolio and land high-paying projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Success Stories</h2>
+                <p class="lead">Hear from our graduates</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">Frontend Developer</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The structured roadmap at EduCode was exactly what I needed. I went from knowing nothing about coding to landing a frontend developer job in just 6 months. The projects were challenging but incredibly rewarding."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <p class="text-muted mb-0">Full Stack Developer</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"As a career switcher, I was worried about keeping up. EduCode's community support and mentorship made all the difference. The MERN stack course gave me the confidence to build complex applications and ace my technical interviews."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">Emily Rodriguez</h5>
+                                <p class="text-muted mb-0">Mobile Developer</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The Flutter course at EduCode transformed my career. The daily structure kept me motivated, and the monthly projects helped me build a portfolio that impressed employers. I now work as a mobile developer at a top tech company."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title mx-auto">Frequently Asked Questions</h2>
+                <p class="lead">Find answers to common questions</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do I need any prior coding experience to join EduCode?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No prior coding experience is required. Our platform is designed for absolute beginners. We start with the fundamentals and gradually progress to more advanced topics. Our 7-month and 1-year paths are specifically designed for beginners.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How much time do I need to commit daily?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend dedicating 2-3 hours per day for consistent progress. Our daily roadmaps are designed to be completed within this timeframe, making it manageable even for working professionals or students.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What kind of support can I expect?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You'll have access to our peer support forums, code buddy system, doubt discussion rooms, and weekly live mentoring sessions. Our instructors are also available to help you through challenging concepts.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Is the certificate recognized by employers?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our certificates are recognized by many employers in the tech industry. The certificate validates your skills and the portfolio projects you've completed during the program, which is often more important than the certificate itself.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can I switch between different tech stacks?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can switch between different tech stacks at any time. While we recommend sticking with one stack to build depth, we understand that career goals may change. Your progress will be saved, and you can continue from where you left off.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started -->
+    <section class="section bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h2 class="display-4 fw-bold mb-4">Ready to Start Your Coding Journey?</h2>
+                    <p class="lead mb-4">Don't waste time stuck on YouTube playlists or scattered tutorials. Follow the roadmap. Build your future.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-light btn-lg">Explore Courses</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">View Roadmaps</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block fade-in">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Coding Journey" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="footer-title">EduCode</h4>
+                    <p class="mb-4">A next-generation learning platform built to reshape the way you learn coding and technology.</p>
+                    <div class="social-icons mb-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="mb-0">© 2023 EduCode. All rights reserved.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Courses</h5>
+                    <a href="#" class="footer-link">MERN Stack</a>
+                    <a href="#" class="footer-link">Python + Django</a>
+                    <a href="#" class="footer-link">Flutter + Dart</a>
+                    <a href="#" class="footer-link">Frontend Development</a>
+                    <a href="#" class="footer-link">Django + React</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Resources</h5>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Community</a>
+                    <a href="#" class="footer-link">Documentation</a>
+                    <a href="#" class="footer-link">Career Center</a>
+                    <a href="#" class="footer-link">Events</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Company</h5>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Our Team</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Partners</a>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Support</h5>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">FAQs</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>Designed with <i class="fas fa-heart text-danger"></i> for learners everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // FAQ toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                answer.classList.add('active');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+        
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

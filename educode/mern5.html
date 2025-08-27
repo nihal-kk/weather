@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="EduCode - Next-generation learning platform for coding and technology. Structured roadmaps, hands-on projects, and career preparation.">
+    <meta name="keywords"
+        content="coding, programming, web development, learn to code, tech education, coding bootcamp, programming courses">
+    <meta name="author" content="EduCode">
+    <title>EduCode - MERN Stack (Full Stack JavaScript + React) 5 months</title>
+    <!-- ICON -->
+    <link rel="icon" type="x-icon/png" href="photos/lolololgo.png">
+    <!-- css file -->
+    <link rel="stylesheet" href="edustyle.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- boot icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- <font  font> -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        .icon-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .edit-area {
+        display: none;
+        margin-top: 5px;
+    }
+    .linkedin-icon {
+        font-size: 30px;
+        color: #0077b5;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body> 
+        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="photos/lolololgo.png" alt="" width="60" height="60" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand" href="fisrt.html" style="align-self: center;">
+                EduCode
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#upup">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#abouts">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vivi">Our Vision</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cococ">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ready">view map</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="index.html" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div><br>
+            <!-- <div class="form-check form-switch text-white ms-3">
+                <input class="form-check-input" type="checkbox" id="darkSwitch" style="display: flex; align-self: center;" onclick="">
+            </div> -->
+        </div>
+    </nav>
+    <div class="container-fluid" style="background-color: #0099ff38;">
+        <div class="row">
+            <div class="col-md-4" id="hh" style="height: 655px; margin-top: 90px;">
+                <div class="card p-5">
+                <div class="text-center">
+                <img src="photos/10337609.png" alt="" class="img-fluid" style="width: 150px;margin-top: 7px;">
+                <div><h1 id="namepo"></h1></div>
+                </div>
+                <div class="row">
+                <div><p style="font-size: 20px;"><i class="fa-solid fa-envelope"></i> <span id="emailpo"></span></p></div>
+                <div><p style="font-size: 20px;"><i class="fa-solid fa-user-group"></i> <span>Batch :</span><b>  11</b></p></div>
+                <div><p style="font-size: 20px;"><i class="fa-solid fa-calendar-days"></i> <span>Week :</span><b>  1</b></p></div>
+                <div><p style="font-size: 17px;"><i class="fa-solid fa-thumbs-up"></i> <span>Skills :</span><b>  No Skills Achieved</b></p></div>
+                <!-- <p style="font-family:cursive;">Craft Your Code , Shape Your Future</p> -->
+
+                <br><br>
+                <p style="font-family:monospace; font-size: 19px;">"The best error message is the one  that never shows up." <br><b><i>--Thomas Fuchs--</i></b></p>
+                <div class="icon-container">
+                    <a id="linkedinLink" href="#" target="_blank">
+                        <i class="fab fa-linkedin linkedin-icon"></i>
+                    </a>
+
+                    <button onclick="toggleEdit()">Edit</button>
+                </div>
+                
+                <div class="edit-area" id="editArea">
+                    <input type="text" id="linkedinUsername" placeholder="Enter LinkedIn username">
+                    <button onclick="saveUsername()">Save</button>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8 " style="margin-top: 75px;">
+                <div class="row">
+                <div class="col">
+                    <div class="card p-3 mt-3" style="background-color: #91c3f3;">
+                    <div><h3><i class="fa-solid fa-user" style="color: #050505;"></i> Personal Into</h3></div><br>
+                    <div><p>Name         :        <span ><b id="namep"></b></span></p></div>
+                    <div><p>Email          :        <span ><b id="emailp"></b></span></p></div>
+                    <div><p>Domain      :        <span ><b id="domainp"></b></span></p></div>
+                    <div><p>Duration     :        <span ><b id="durap"></b></span></p></div>
+                    <div><p>Start Date     :        <span style="font-size: 10px;"><b id="startp"></b></span></p></div>
+                    </div>
+                </div>
+                <div class="col" style="height: 328px;">
+                    <div class="card p-3 mt-3" style="background-color: rgb(214, 255, 226)">
+                    <div><h3>Learning Focus Areas</h3></div><br>
+                    <div><p>Core Skills            :     <span ><b>HTML, CSS, JavaScript, React, Node.js,<br>                                  MongoDB</b></span></p></div>
+                    <div><p>Supporting Tools  :   <span ><b> Git, GitHub, VS Code, Postman, Figma</b></span></p></div>
+                    <div style="height: 70px;"><p>Key Topics             :   <span ><b>API Development, Authentication,                                  Responsive Design, Deployment</b></span></p></div>
+                    <br><br>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                     <div class="card" style="padding: 10px; background-color: rgb(214, 255, 226); margin-top: 25px;">
+                <h4>Words From EduCode Desk</h4>
+                <P>hey <span id="unamef"></span>,<br><span>I’m Muhammed Nihal, the founder of EduCode. Remember — every expert was once a beginner. The difference is, they kept going when things got tough. Here at EduCode, every challenge you face is a stepping stone toward your goals. Stay curious, stay consistent, and believe in your ability to grow. You’re not just learning to code — you’re building the future you’ve always dreamed of.<br>
+                    
+                    <b>Muhammed Nihal, Founder & CEO, EduCode</b></span></P>
+                </div>
+                </div>
+                <div class="col" style="height: 328px;">
+                     <div class="card" style="padding: 10px; background-color: #91c3f3; margin-top: 25px;">
+                    <h4>From Your Desk</h4>
+                    <p id="aboutt" style="font-weight:450; color: rgb(0, 0, 0);">error in here</p>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        
+    </div>    
+    
+
+<!-- 😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊😊 -->
+
+<script>
+    function toggleEdit() {
+        document.getElementById("editArea").style.display = "block";
+    }
+
+    function saveUsername() {
+        let username = document.getElementById("linkedinUsername").value.trim();
+        if(username) {
+            let fullLink = `https://www.linkedin.com/in/${username}`;
+            document.getElementById("linkedinLink").href = fullLink;
+            localStorage.setItem("linkedinUsername", username);
+            document.getElementById("editArea").style.display = "none";
+        } else {
+            alert("Please enter a username.");
+        }
+    }
+
+    window.onload = function() {
+        let savedUser = localStorage.getItem("linkedinUsername");
+        if(savedUser) {
+            document.getElementById("linkedinLink").href = `https://www.linkedin.com/in/${savedUser}`;
+        }
+    }
+</script>
+          <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+        
+        
+        const uname = localStorage.getItem("username");
+        const uemail = localStorage.getItem("email");
+        const udoma = localStorage.getItem("domain");
+        const udure = localStorage.getItem("duration");
+        const udate = localStorage.getItem("date");
+        if (uname) {
+            document.getElementById("namep").innerText = `${uname}`;
+            document.getElementById("namepo").innerText = `${uname}`;
+            document.getElementById("unamef").innerText = `${uname}`;
+            document.getElementById("emailp").innerText = `${uemail}`;
+            document.getElementById("emailpo").innerText = `${uemail}`;
+            document.getElementById("domainp").innerText = `${udoma}`;
+            document.getElementById("durap").innerText = `${udure}`;
+            document.getElementById("startp").innerText = `${udate}`;
+        }
+       document.getElementById('aboutt').innerHTML = 
+`I am ${uname}, currently enrolled as an EduCode student in the ${udoma} program.
+My course duration is ${udure}, during which I will follow a structured learning roadmap designed to build my skills step-by-step.
+
+Through this program, I aim to gain practical experience, complete real-world projects, and prepare myself for professional opportunities in the field of ${udoma}. I am committed to learning consistently and making the most of my time at EduCode.`;
+        
+function logout(){
+  localStorage.clear();
+
+}
+    </script>
+</body>
+</html>
